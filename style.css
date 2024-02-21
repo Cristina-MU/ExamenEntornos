@@ -1,0 +1,197 @@
+/*el contenedor engloba toda la pagina*/
+.contenedor{
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 90px auto;
+    grid-template-rows: 60px auto;
+    grid-template-areas: 
+        "header header"
+        "menu section"
+        "menu content";
+}
+.contenedor.active{
+    grid-template-columns: minmax(300px, 18%) auto;
+}
+
+/* Header */
+.header{
+    grid-area: header;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 20px;
+    grid-template-areas: "logo busqueda iconos";
+}
+
+/*parte del header con el menu y el logo*/
+.header .contenedor_logo{
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+}
+.header .contenedor_logo .boton_menu{
+    border: none;
+    padding: 10px;
+    background: none;
+    font-size: 18px;
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+.header .contenedor_logo .boton_menu:hover{
+    background: rgb(203, 209, 218); /* colorea al ponerte encima */
+}
+.header .contenedor_logo .letras{
+    margin-right: 4px;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 20px;
+    
+}
+/*parte del header con la barra de búsqueda*/
+.header .barra_busqueda{
+    grid-area: busqueda;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header .barra_busqueda input{
+    min-width: 35%;
+    padding: 0 15px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid rgb(156, 147, 147);
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+
+}
+.header .barra_busqueda .lupa{
+    border:1px solid rgb(156, 147, 147);
+    border-left: none;
+    color: rgb(156, 147, 147);
+    background: white;
+    padding: 0 25px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.header .barra_busqueda .micro{
+    border:1px solid rgb(156, 147, 147);
+    border-radius: 100%;
+    padding: 6px;
+    margin-left: 10px;
+}
+.header .barra_busqueda .micro:hover{
+    background: rgb(203, 209, 218);
+}
+/*parte del header con los iconos de la derecha*/
+.header .botones_header{
+    grid-area: iconos;
+    display: flex;
+    align-items: center;
+}
+.header .botones_header button{
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    padding: 7px;
+    margin-right: 5px;
+    border-radius: 100%;
+}
+.header .botones_header button:hover{
+    background: rgb(203, 209, 218);
+}
+
+/* parte del section con botones de navegación */
+
+.navbar {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+.navbar li {
+    display: inline;
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 10%;
+    margin-left: 5px;
+}
+.navbar li:hover {
+    background: rgb(203, 209, 218);
+}
+
+/* Menu lateral */
+.menu_lateral{
+    grid-area: menu;
+    background: white;
+}
+.menu_lateral div{
+    display: block;
+    padding: 15px 35px;
+    color: black;
+    font-weight: bold;
+}
+.menu_lateral div:hover{
+    background: rgb(170, 174, 180);
+}
+.menu_lateral div.active{
+    font-weight: bold;
+}
+.menu_lateral img{
+    color:beige;
+    margin-right: 32px;
+    width: 30px;
+    text-align: center;  
+}
+.menu_lateral hr{
+    margin: 20px 0;
+    border: 1px solid rgb(163, 157, 157);
+}
+
+/* seccion principal*/
+.main{
+    grid-area: content;
+    background: white;
+    padding: 40px;
+}
+.main .grid_videos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.main .grid_videos .video{
+    width: 100%;
+}
+.main .grid_videos .video .portada{
+    border: 1px solid black;
+}
+.main .grid_videos .video img{
+    width: 100%;
+    margin: 5px;
+    padding-left: 10px;
+    border-radius: 5%;
+}
+/*texto descriptivo de los videos*/
+.main .grid_videos .video .txt{
+    padding: 5px;
+    font-size: 18px;
+    margin-left: 40px;
+    font-weight: bold;
+}
+.main .grid_videos .video .icono{
+    position: absolute;
+    width: 35px;
+    float: left;
+    vertical-align: middle;
+    border-radius: 100%;
+}
+.main .grid_videos .video .minit{
+    padding: 5px;
+    font-size: 15px;
+    margin-left: 35px;
+}
